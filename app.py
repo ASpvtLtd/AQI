@@ -398,18 +398,52 @@ def main():
 
 
     if ch == 'Predict':
+        st.markdown('''<hr><center><h2>Enter your input and test it!</h2></center><br>''', unsafe_allow_html=True)
         st.subheader("PM2.5")
         pm25 = st.number_input("", key=1)
+        st.subheader("PM10")
         pm10 = st.number_input("", key=2)
-        co = st.number_input("", key=3)
-        no = st.number_input("", key=4)
+        st.subheader("NOx")
+        nox = st.number_input("", key=3)
+        st.subheader("CO")
+        co = st.number_input("", key=4)
+        st.subheader("NH3")
         so = st.number_input("", key=5)
+        st.subheader("O3")
         nox = st.number_input("", key=6)
+        st.subheader("SO2")
+        so2 = st.number_input("", key=7)
+        st.subheader("Benzene")
+        ben = st.number_input("", key=8)
+        st.subheader("Toulene")
+        tou = st.number_input("", key=9)
+        st.subheader("Xylene")
+        xy = st.number_input("", key=10)
 
+        ls = []
+        ls.append(pm25)
+        ls.append(pm10)
+        ls.append(nox)
+        ls.append(co)
+        ls.append(so)
+        ls.append(nox)
+        ls.append(so2)
+        ls.append(ben)
+        ls.append(tou)
+        ls.append(xy)
 
-        p = model.predict([[25, 35, 95, 100, 50, 78, 55, 15, 10, 5]])
-        st.write(p)
-
+        arr = np.array(ls)
+        arr = arr.astype(np.float64)
+        st.markdown('''<br>''', unsafe_allow_html=True)
+        btn = st.button('Predict')
+        st.markdown('''<hr>''', unsafe_allow_html=True)
+        st.markdown('''<br><center><img src="https://user-images.githubusercontent.com/66116934/128896071-dfa32d99-1677-4e2b-8f3b-7dd4cacf0364.png"></center><br>''', unsafe_allow_html=True)        
+        p = model.predict([arr])
+        p = float(p)
+        p = round(p, 2)
+        st.subheader("AQI")
+        if btn == True:
+            st.info(p)
         
     study1 = """
             <div style="align-items:center; background-color: #F5F5F5; padding:15px">
