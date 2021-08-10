@@ -365,8 +365,6 @@ def main():
             <div style="align-items:center; background-color: #F5F5F5; padding:15px">
                 <p style = "font-size:19px;">AQI is worsening constantly year after year around us and has become topic of concern.
                 So, this led me to ponder for a while about the situation and an inspiring thought came out of cogitation . . .<br></p>
-                <h3>Main Stream</h3><p style = "font-size:19px;">A solution for this kind of challenge is for sure more and more plantation of trees and this can be done with a little bit of technique and elementary mathematics 😁. Be ready to get your hands dirty with math stuff !
-                </p>
             </div>
     """
     about3 = """<div style="align-items:center; background-color: #F5F5F5; padding:15px">
@@ -392,7 +390,7 @@ def main():
         st.markdown(about1, unsafe_allow_html=True)
         st.markdown(tree, unsafe_allow_html=True)
         st.markdown(about2, unsafe_allow_html=True)
-        st.markdown(about3, unsafe_allow_html=True)
+        #st.markdown(about3, unsafe_allow_html=True)
     
 
     if ch == 'Live':
@@ -412,8 +410,24 @@ def main():
         p = model.predict([[25, 35, 95, 100, 50, 78, 55, 15, 10, 5]])
         st.write(p)
 
+        
+    study1 = """
+            <div style="align-items:center; background-color: #F5F5F5; padding:15px">
+                <h2>How we approached the problem?</h2>
+                <p style = "font-size:19px;">We started by going into the depths of the problem by revising preexisting stats from different authentic sources which provide non-questionable data along with rich analysis.<br>The Roadmaop for whole study was like this...
+            </div>
+    """        
+        
     if ch == 'Study':
-        pass
+        air = '''<div><img src="https://user-images.githubusercontent.com/66116934/128893713-bc0bc5cf-1a66-45d2-8ed5-954f147a1567.png" style="max-width:100%"></div>'''
+        road = '''<div><img src="https://user-images.githubusercontent.com/66116934/128891666-59299a34-5e12-4cca-82ea-0719fbff4a84.png" style="max-width:100%"></div>'''
+        
+        st.markdown(air, unsafe_allow_html=True)
+        st.markdown(study1, unsafe_allow_html=True)
+        st.markdown(road, unsafe_allow_html=True)
+        
+        
+        
 
 
 if __name__ == "__main__":
